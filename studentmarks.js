@@ -34,17 +34,19 @@ let students = [
 ];
   
 // Sort the array by total marks
-function compare(a, b , order='totalmarks')  {
-   
+function compareMarks(a, b) 
+  {
+    const total1 = a.total1;
+    const total2 = b.total2;
    let comparison = 0
-   if (a.biology + a.chemistry >  b.biology + b.chemistry ) {
+   if (a.total1 >  b.total2 ) {
      comparison = 1;
-    } else if (a.chemistry + a.biology < b.chemistry + b.biology) {
+    } else if (a.total1 < b.total2) {
      comparison = -1;
     } else {
     // If the students have the same total marks, sort them by biology marks
-     comparison = a.biology - b.biology;
+     comparison = a.biology-b.biology;
    }
 }
 // Print the sorted array
-console.log(students.sort(compare));
+console.log(students.sort(compareMarks));
